@@ -36,7 +36,7 @@ class TweetManager:
 				tweet = models.Tweet()
 				
 				# usernameTweet = tweetPQ("span.username.js-action-profile-name b").text()
-				txt = re.sub(r"\s+", " ", tweetPQ("p.js-tweet-text").text().replace('# ', '#').replace('@ ', '@'))
+				txt = re.sub(r"\s+", " ", tweetPQ("p.js-tweet-text").text())
 				txt = txt.replace('# ', '#').replace('@ ', '@')
 				retweets = int(tweetPQ("span.ProfileTweet-action--retweet span.ProfileTweet-actionCount").attr("data-tweet-stat-count").replace(",", ""))
 				favorites = int(tweetPQ("span.ProfileTweet-action--favorite span.ProfileTweet-actionCount").attr("data-tweet-stat-count").replace(",", ""))
